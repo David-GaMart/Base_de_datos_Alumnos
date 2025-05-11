@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="shorcut icon" href="./assets/iconEscudo.svg">
+    <link rel="stylesheet" href="style.css">
+    <title>ANTA</title>
+</head>
+<body class="bg">
+    <header>
+        <section  class=" d-flex justify-content-between ms-3 me-3 mt-3">
+            <div>
+                <img class="escudo" src="./assets/Escudo.png" alt="Escudo">
+            </div  >
+            <h1 class="text-white align-self-center">Academia Nacional de Tecnología Avanzada</h1>
+            <div class=" align-self-center">
+                <img class="iconSocialMedia" src="./assets/iconX.svg" alt="xIcon">
+                <img class="iconSocialMedia" src="./assets/iconFacebook.svg" alt="facebookIcon">
+                <img class="iconSocialMedia" src="./assets/iconsInstagram.svg" alt="instagramIcon">
+            </div>
+        </section>
+        <nav class="d-flex justify-content-around">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="text-black nav-link" id="aboutUs-tab" data-bs-toggle="tab" data-bs-target="#aboutUs" type="button" role="tab" aria-controls="aboutUs" aria-selected="false">Sobre Nosotros</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="text-black nav-link" id="mission-tab" data-bs-toggle="tab" data-bs-target="#mission" type="button" role="tab" aria-controls="mission" aria-selected="false">Mision</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="text-black nav-link" id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision" type="button" role="tab" aria-controls="vision" aria-selected="false">Vision</button>
+                </li>
+            </ul>
+            <button class="mb-2 mt-2 btn btn-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Inicio de sesion</button>
+        </nav>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade text-white text-center mt-4" id="aboutUs" role="tabpanel" aria-labelledby="aboutUs-tab">
+                <p>La Academia Nacional de Tecnología Avanzada (ANTA) es una institución de educación superior e investigación<br>
+                    dedicada a la formación de líderes y expertos en las áreas de tecnología más vanguardistas. Con un enfoque en<br>
+                    la innovación, la investigación aplicada y la colaboración con la industria, ANTA busca impulsar el desarrollo <br>
+                    tecnológico y económico de México.</p>
+            </div>
+            <div class="tab-pane fade text-white text-center mt-4" id="mission" role="tabpanel" aria-labelledby="mission-tab">
+                <p>Formar profesionales íntegros y altamente capacitados en las áreas de ciencia y tecnología,<br>
+                    mediante una educación de excelencia que promueva la innovación, el pensamiento crítico y <br>
+                    el compromiso con el desarrollo sostenible de la sociedad.</p>
+            </div>
+            <div class="tab-pane fade text-white text-center mt-4" id="vision" role="tabpanel" aria-labelledby="vision-tab">
+                <p>Ser una institución de referencia nacional e internacional en educación tecnológica, <br>
+                    reconocida por su excelencia académica, su impacto en la investigación aplicada y <br>
+                    su contribución al avance científico y social del país.</p>
+            </div>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form id="login" class="form align-self-center">
+                    <h3>Inicio de sesion para personal docente</h3>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="userHelp">
+                        <div id="userHelp" class="form-text">Use corectamente mayusculas y minusculas en su usuario y contraseña</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="start">Ingresar</button>
+                </form>
+                <div id="login-message" class="align-self-center"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="mainStudents">
+            <div>
+                <button id="studensRegistration">Alta de Alumnos</button>
+                <div id="studensRegistrationTab">
+                    <form id="registrationForm" class="row g-3">
+                        <div class="col-auto">
+                            <label for="name" class="visually-hidden">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Nombre">
+                        </div>
+                        <div class="col-auto">
+                            <label for="lastName" class="visually-hidden">Apellidos</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Apellidos">
+                        </div>
+                        <div class="col-auto">
+                            <label for="age" class="visually-hidden">Edad</label>
+                            <input type="text" class="form-control" id="age" placeholder="Edad">
+                        </div>
+                        <div class="col-auto">
+                            <button id="register" type="submit" class="btn btn-primary mb-3">Registrar</button>
+                        </div>
+                    </form>
+            </div>
+            <div>
+                <button>Alumnos</button>
+            </div>
+            <div>
+                <button>Inscripcion a clases</button>
+                <div>
+                    <p>Para la inscripcion de alumnos, escriba correctamente el nombre y los apellidos</p>
+                    <p>si no se escribe correctamente el sistema lo detectara como erroneo</p>
+                </div>
+                <form id="enrollClass" class="row ">
+                    <div class="m-2 col-auto">
+                        <label class="visually-hidden" for="registrationClassName">Nombre</label>
+                        <input type="text" class="form-control" id="registrationClassName" placeholder="Nombre">
+                    </div>
+                    <div class="m-2 col-auto">
+                        <label class="visually-hidden" for="registrationClassLastName">Apellidos</label>
+                        <input type="text" class="form-control" id="registrationClassLastName" placeholder="Apellido">
+                    </div>
+                    <div class="m-2 col-auto">
+                        <label class="visually-hidden" for="registrationCareer">Carrera</label>
+                        <select class="form-select" id="registrationCareer">
+                        <option selected>Elegir Carrera</option>
+                        <option>Ingenieria en Ciencia de Datos</option>
+                        <option>Inteligencia en Inteligencia Artificial</option>
+                        <option>Ingenieria en Ciberseguridad</option>
+                        <option>Ingenieria en Desarrollo de Software y Apoptioncaciones</option>
+                        <option>Ingenieria en Internet de las Cosas (IoT)</option>
+                        <option>Ingenieria en Robotica y Automatizacion</option>
+                        <option>Desarrollo de Videojuegos y Realidad Extendida</option>
+                        <option>Ingenieria en Energias Renovables y Sostenibilidad</option>
+                        </select>
+                    </div>
+                    <div class="m-2 col-auto">
+                        <label class="visually-hidden" for="registerSubjets">Materia</label>
+                        <select class="form-select" id="registerSubjets">
+                            <option selected>Elegir Materia</option>
+                        </select>
+                    </div>
+                    <div class="m-2 col-auto">
+                        <button id="registerClass" type="submit" class="btn btn-primary">Inscribir</button>
+                    </div>
+                </form>
+                <div id="classMessage"></div>
+            </div>
+            <div>
+                <div>
+                    <button>calificaciones</button>
+                    <form id="scoreForm" class="row ">
+                        <div class="m-2 col-auto">
+                            <label class="visually-hidden" for="registrationScoreName">Nombre</label>
+                            <input type="text" class="form-control" id="registrationScoreName" placeholder="Nombre">
+                        </div>
+                        <div class="m-2 col-auto">
+                            <label class="visually-hidden" for="registrationScoreLastName">Apellidos</label>
+                            <input type="text" class="form-control" id="registrationScoreLastName" placeholder="Apellido">
+                        </div>
+                        <div class="m-2 col-auto">
+                            <label class="visually-hidden" for="registrationScore">Carrera</label>
+                            <select class="form-select" id="registrationScore">
+                            <option selected>Elegir Calificacion</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            </select>
+                        </div>
+                        <div class="m-2 col-auto">
+                            <button id="registerScore" type="submit" class="btn btn-primary">Calificar</button>
+                        </div>
+                        <div id="scoreMessage"></div>
+                    </form>
+                </div>
+                <div>
+                    <ul class="d-flex flex-row justify-content-around">
+                        <li class="list">
+                            <button>Lista General</button>
+                        </li>
+                        <li class="list">
+                            <button>Promedio Alumno</button>
+                        </li>
+                        <li class="list">
+                            <button>Promedio Grupo</button>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="d-flex flex-row justify-content-around">
+                        <li class="list">
+                            <button>Nombre</button>
+                        </li>
+                        <li class="list">
+                            <button>Apellidos</button>
+                        </li>
+                        <li class="list">
+                            <button>Lista por Carreras</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Carrera</th>
+                            <th scope="col">Materias</th>
+                            <th scope="col">Calificaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyBoard">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <nav class="mt-4 mb-4">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./assets/greenAreas.jpeg" class="d-block w-100" alt="greenAreas">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/Lab.jpeg" class="d-block w-100" alt="lab">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/Robotic.jpeg" class="d-block w-100" alt="robotics">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/school.jpeg" class="d-block w-100" alt="school">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/students.jpeg" class="d-block w-100" alt="students">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </nav>
+        <section id="courses" class="d-flex justify-content-around">
+            <div class="overlay"></div>
+            <div class="container mb-4 mt-4">
+                <p class="title-list fs-4 fw-bloder">Carreras</p>
+                <ul class="list">
+                    <li  class="list-item">Ingenieria en Ciencia de Datos</li>
+                    <li  class="list-item">Inteligencia en Inteligencia Artificial</li>
+                    <li  class="list-item">Ingenieria en Ciberseguridad</li>
+                    <li  class="list-item">Ingenieria en Desarrollo de Software y Aplicaciones</li>
+                    <li  class="list-item">Ingenieria en Internet de las Cosas (IoT)</li>
+                    <li  class="list-item">Ingenieria en Robotica y Automatizacion</li>
+                    <li  class="list-item">Desarrollo de Videojuegos y Realidad Extendida</li>
+                    <li  class="list-item">Ingenieria en Energias Renovables y Sostenibilidad</li>
+                </ul>
+            </div>
+            <div class="container mb-4 mt-4">
+                <p class="title-list fs-4 fw-bloder">Deportes</p>
+                <ul class="list">
+                    <li  class="list-item">Futbol</li>
+                    <li  class="list-item">Baloncesto</li>
+                    <li  class="list-item">Voleybol</li>
+                    <li  class="list-item">Atletismo</li>
+                </ul>
+            </div>
+            <div class="container mb-4 mt-4">
+                <p class="title-list fs-4 fw-bloder">Actividades Extraclase</p>
+                <ul class="list">
+                    <li  class="list-item">Club de ciencias</li>
+                    <li  class="list-item">Teatro</li>
+                    <li  class="list-item">Oratoria</li>
+                    <li  class="list-item">Pintura</li>
+                    <li  class="list-item">Musica y Danza</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="d-flex justify-content-around">
+            <div>
+                <img class="escudo" src="./assets/Escudo.png" alt="Escudo">
+            </div>
+            <div>
+                <p>Academia Nacional de Tecnologia Avanzada</p>
+                <p>Forjando el futuro con conocimiento y tecnologia</p>
+                <ul class="list d-flex flex-column align-items-center">
+                    <li><img class="iconInfo" src="./assets/phone-call.png" alt="phoneIcon"> +52 (55) 1234 5678</li>
+                    <li><img class="iconInfo" src="./assets/email.png" alt="emailIcon"> info@anta.edu.mx</li>
+                    <li><img class="iconInfo" src="./assets/web.png" alt="webIcon"> www.anta.edu.mx</li>
+                </ul>
+            </div>
+            <div>
+                <p>Ubicacion</p>
+                <p>Avenida Tecnológica de la Innovación #100,
+                <br> Parque Científico y Tecnológico "Quantum",
+                <br> Ciudad Innovación, Estado de México,
+                <br> C.P. 55555.</p>
+            </div>
+        </section>
+    </footer>
+</body>
+</html> 
